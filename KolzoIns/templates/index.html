@@ -33,7 +33,7 @@
                             <a href="#contact">Contact</a>
                             <a href="#login">Login</a>
                             <div class="become-member">
-                                <button>Become a Member</button>
+                                <a href="#book" class="button">Join</a>
                             </div>
                         </div>
                     </div>
@@ -334,57 +334,60 @@
         </section>
 
         <br><br><br>
-        <div class="world">
-            <div class="ping">
-                <div class="pic">
-                    <img src="{% static 'images/Aaron.jpg' %}">
-                </div>
-                <div class="about-ceo">
-                    <h3>Aaron Munyua, CEO Of Kolzi Modo Insurance</h3>
-                    <p>
-                        He is well versed in the insurance industry.
-                        He did a course in insurance under BCOM at the University of Egerton.
-                        He had an internship course at APA Insurance, Thika for a year.
-                        Worked under Vantage performance Limited as an underwriting assistant,
-                        worked for finance, for 6 months as a claim assistant.
-                        He did his ECOP examination, and Certified IRA licence
-                        for year 2024 and 2025.
-                        IRA 2024 No: IRA/05/47528/2024
-                    </p>
-                </div>
-            </div>
-            <div class="appointment">
-
-                <form action="/submit_form" method="post">
-                    <div class="details">
-                        <label for="full_name">Name*</label>
-                        <input type="text" id="full_name" name="full_name" required placeholder="Enter your full name">
-
-                        <label for="email">Email address*</label>
-                        <input type="email" id="email" name="email" required placeholder="example@gmail.com">
-
-                        <label for="department">Department*</label>
-                        <select id="department" name="department" required>
-                            <option value="">Please Select</option>
-                            <option value="HR">HR</option>
-                            <option value="Finance">Finance</option>
-                            <option value="IT">IT</option>
-                        </select>
-
-                        <label for="appointment_time">Time*</label>
-                        <select id="appointment_time" name="appointment_time" required>
-                            <option value="">Please Select</option>
-                            <option value="09:00 AM">09:00 AM</option>
-                            <option value="10:00 AM">10:00 AM</option>
-                            <option value="11:00 AM">11:00 AM</option>
-                        </select>
+                <div class="world">
+                    <div class="ping">
+                        <div class="pic">
+                            <img src="{% static 'images/Aaron.jpg' %}">
+                        </div>
+                        <div class="about-ceo">
+                            <h3>Aaron Munyua, CEO Of Kolzi Modo Insurance</h3>
+                            <p>
+                                He is well versed in the insurance industry.
+                                He did a course in insurance under BCOM at the University of Egerton.
+                                He had an internship course at APA Insurance, Thika for a year.
+                                Worked under Vantage performance Limited as an underwriting assistant,
+                                worked for finance, for 6 months as a claim assistant.
+                                He did his ECOP examination, and Certified IRA licence
+                                for year 2024 and 2025.
+                                IRA 2024 No: IRA/05/47528/2024
+                            </p>
+                        </div>
                     </div>
-                    <div class="btnn">
-                        <button type="submit">Book Appointment</button>
-                    </div>
-                </form>
-            </div>
-        </div><br><br><br><br>
+
+                    <section id="book">
+                        <div class="appointment">
+                            <form action="/submit_form" method="post">
+                                <div class="details">
+                                    <label for="full_name">Name*</label>
+                                    <input type="text" id="full_name" name="full_name" required placeholder="Enter your full name">
+
+                                    <label for="email">Email address*</label>
+                                    <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+
+                                    <label for="department">Insurance type*</label>
+                                    <select id="department" name="department" required>
+                                        <option value="">Please Select</option>
+                                        <option value="Basic">Basic Package</option>
+                                        <option value="Life">Life Insurance</option>
+                                        <option value="Car">Car Insurance</option>
+                                    </select>
+
+                                    <label for="appointment_time">Time*</label>
+                                    <select id="appointment_time" name="appointment_time" required>
+                                        <option value="">Please Select</option>
+                                        <option value="09:00 AM">09:00 AM</option>
+                                        <option value="10:00 AM">10:00 AM</option>
+                                        <option value="11:00 AM">11:00 AM</option>
+                                    </select>
+                                </div>
+                                <div class="btnn">
+                                    <button type="submit">Book Appointment</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                </div><br><br><br><br>
 
         <div class="Agency">
             <div class="consulting">

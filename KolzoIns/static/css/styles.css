@@ -886,9 +886,13 @@ form {
     margin-left: 1rem;
 }
 
+    .become-member a {
+        background-color: #0066cc;
+    }
+
     .become-member button {
         background-color: #0066cc;
-        color: white;
+        color: blue;
         border: none;
         padding: 0.5rem 1rem;
         border-radius: 4px;
