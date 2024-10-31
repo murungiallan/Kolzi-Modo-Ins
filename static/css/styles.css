@@ -1,0 +1,1065 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main2 {
+    background-image: url('/static/images/car2.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 110vh;
+    top: -100px; /* Add this */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    top: -60px;
+}
+
+.brand {
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0px;
+}
+
+.service {
+    font-size: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mind {
+    background-color: white;
+    border: black;
+    padding: 20px;
+}
+.mind h3 {
+        font-size: 22px;
+    }
+
+.mind p {
+    }
+
+.prof ion-icon {
+    font-size: 50px;
+}
+
+.life {
+    background-color: white;
+    border: black;
+    padding: 20px;
+}
+
+    .life h3 {
+        font-size: 22px;
+    }
+
+
+
+.satisfaction {
+    background-color: white;
+    border: black;
+    padding: 20px;
+}
+
+    .satisfaction h3 {
+        font-size: 22px;
+    }
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.button2 button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+    .button2 button:hover {
+        background-color: blue;
+    }
+
+.button button {
+    border-radius: 15px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    width: 150px;
+    height: 50px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+    .button button:hover {
+        background-color: rgb(38, 38, 209);
+    }
+
+.button2 button {
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+}
+.brand2 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 20px auto 0;
+}
+
+.feature-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px; /* Increased padding */
+    min-width: 0;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 200px; /* Increased height to fit content */
+    background-color: transparent; /* Start with transparent background */
+}
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+.icon-wrapper {
+    margin-bottom: 15px;
+}
+
+    .icon-wrapper ion-icon {
+        font-size: 32px;
+        color: #333;
+        transition: transform 0.3s ease;
+    }
+
+.feature-card:hover .icon-wrapper ion-icon {
+    transform: scale(1.2);
+    color: #007bff;
+}
+
+.feature-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    color: #333;
+    min-height: 24px; /* Changed to min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover h3 {
+    color: #007bff;
+}
+
+.feature-card p {
+    margin: 0;
+    line-height: 1.5;
+    color: #666;
+    min-height: 80px; /* Changed to min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .brand2 {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .feature-card {
+        width: 100%;
+        height: auto; /* Allow height to adjust on mobile */
+        min-height: 300px; /* Minimum height on mobile */
+    }
+
+        .feature-card p {
+            min-height: 80px;
+        }
+}
+
+
+.brand3 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 200px auto 0;
+}
+
+.policy-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 0; /* Prevents flex items from overflowing */
+}
+
+.icon-container {
+    margin-bottom: 20px;
+}
+
+    .icon-container img {
+        width: 100px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+        .icon-container img:hover {
+            transform: scale(1.05);
+        }
+
+.policy-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.policy-card p {
+    text-align: justify;
+    line-height: 1.6;
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+    /* Ensures consistent height */
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .brand3 {
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 100px;
+    }
+
+    .policy-card {
+        width: 100%;
+    }
+
+        .policy-card p {
+            min-height: auto;
+        }
+}
+.mind:hover, .life:hover {
+    background-color: rgb(57, 57, 179);
+}
+
+.satisfaction {
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+.satisfaction:hover {
+        background-color: rgb(57, 57, 179);
+    }
+
+.insurance {
+}
+
+.industry {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.conflict {
+}
+
+/* Add or update these CSS rules */
+body {
+    overflow-x: hidden; /* Prevents horizontal scroll on the body */
+}
+
+.users-container {
+    width: 100%;
+    max-width: 700px; /* Fits exactly 2 cards (300px * 2 + 30px gap + some padding) */
+    margin: 0 auto; /* Centers the container */
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.users {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+    width: fit-content;
+}
+
+.user1, .user2, .user3 {
+    width: 300px;
+    height: 220px;
+    flex-shrink: 0; /* Prevents cards from shrinking */
+    padding: 20px;
+    border: 1px solid #dadada;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile1, .profile2, .profile3 {
+    margin-bottom: 15px;
+}
+
+    .profile1 img, .profile2 img, .profile3 img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid #dadada;
+        object-fit: cover;
+    }
+
+.content {
+    text-align: center;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+    .content p {
+        margin: 0;
+        line-height: 1.5;
+    }
+
+.stars1, .stars2, .stars3 {
+    display: flex;
+    gap: 5px;
+}
+
+    .stars1 ion-icon, .stars2 ion-icon, .stars3 ion-icon {
+        color: #ffd700;
+        font-size: 20px;
+    }
+
+.vectors {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.hooli, .vector1, .vetor2, .vector3 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .hooli img, .vector1 img, .vetor2 img, .vector3 img {
+        width: 100px; /* Set the desired width */
+        height: 100px; /* Set the desired height */
+        object-fit: contain; /* Maintain aspect ratio */
+    }
+
+.news {
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right,purple,rgb(136, 4, 136), rgb(238, 53, 84));
+    width: 100%;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.email {
+    display: flex;
+    justify-content: center;
+}
+
+    .email button {
+        background-color: blue;
+    }
+
+.letter {
+    width: 50%;
+}
+
+.pricing {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.boxes {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.free,
+.standard,
+.premium {
+    width: 300px;
+    min-height: 200px;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+    .free:hover,
+    .standard:hover,
+    .premium:hover {
+        transform: scale(1.13);
+        background-color: #0078D4;
+        color: white;
+    }
+
+h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.green {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+    .green div {
+        display: flex;
+        align-items: start;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .green ion-icon {
+        color: #22c55e;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+.free:hover .green ion-icon,
+.standard:hover .green ion-icon,
+.premium:hover .green ion-icon {
+    color: #4ade80;
+}
+
+.btn {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    text-align: center; /* Added this line to center the button */
+}
+
+button {
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 0 auto;
+    display: flex; /* Changed from block to flex */
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Centers text vertically */
+    min-width: 120px; /* Added to ensure consistent button width */
+}
+    button:hover {
+        background-color: #005fb3;
+        transform: translateY(-2px);
+    }
+
+.free:hover button,
+.standard:hover button,
+.premium:hover button {
+    background-color: white;
+    color: #0078D4;
+}
+
+.consulting {
+    /*display:flex;
+    padding-top: 30px;
+    justify-content: center;
+    background-color:red;*/
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.consul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.world {
+    background-color: rgb(2, 2, 46);
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+.ping {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 30px;
+    color: white;
+}
+
+.pic {
+    flex: 1;
+    max-width: 300px;
+}
+
+    .pic img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+.about-ceo {
+    flex: 2;
+    padding: 20px;
+}
+
+    .about-ceo h3 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .about-ceo p {
+        line-height: 1.6;
+    }
+
+/* Modern Appointment Form */
+.world {
+    background-color: rgb(2, 2, 46);
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+.ping {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 30px;
+    color: white;
+}
+
+.pic {
+    flex: 1;
+    max-width: 300px;
+}
+
+    .pic img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+.about-ceo {
+    flex: 2;
+    padding: 20px;
+    position: relative;
+}
+
+    .about-ceo h3 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .about-ceo p {
+        line-height: 1.6;
+    }
+
+/* Modern Appointment Form */
+.appointment {
+    background: white;
+    width: 60%; /* Made even smaller since there's no image */
+    max-width: 450px; /* Reduced max-width */
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px ;
+    background-color:deepskyblue
+}
+
+form {
+    width: 90%;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+    .details label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .details input,
+    .details select {
+        width: 100%;
+        padding: 8px 12px;
+        border: 2px solid #eee;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+        .details input:focus,
+        .details select:focus {
+            border-color: rgb(2, 2, 46);
+            outline: none;
+        }
+
+.btnn {
+    margin-top: 15px;
+}
+
+    .btnn button {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(2, 2, 46);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btnn button:hover {
+            background-color: rgb(3, 3, 70);
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .appointment {
+        width: 80%;
+        padding: 20px;
+    }
+}
+.Agency {
+    display: flex;
+    justify-content: center;
+}
+
+.consulting {
+    display: flex;
+}
+
+
+.information {
+    display: flex;
+    justify-content: center;
+}
+
+.touch img {
+    font-size: 5px;
+    color: blue;
+}
+
+.com ion-icon {
+    color: blue;
+}
+
+.address ion-icon {
+    color: blue;
+}
+
+.phone ion-icon {
+    color: blue;
+}
+
+.life ion-icon {
+    color: blue;
+}
+
+.prof ion-icon {
+    color: blue;
+}
+
+.prof ion-icon {
+    color: blue;
+}
+
+.folder ion-icon {
+    color: blue;
+}
+
+.bookmark ion-icon {
+    color: blue;
+}
+
+.people ion-icon {
+    color: blue;
+}
+
+.stars1 ion-icon {
+    color: rgb(230, 230, 5)
+}
+
+.stars2 ion-icon {
+    color: rgb(230, 230, 5)
+}
+
+.stars3 ion-icon {
+    color: rgb(230, 230, 5)
+}
+
+.box1 {
+    color: blue;
+}
+
+.box2 {
+    color: blue;
+}
+
+.box3 {
+    color: blue;
+}
+.email button{
+}
+
+.btn button {
+    background-color: blue;
+    width: 50%;
+}
+
+.contact button {
+    background-color: blue;
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.consulting {
+    display: flex;
+    gap: 200px;
+}
+
+.service {
+    margin-top: 100px;
+}
+
+
+
+.socials {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px; /* Increased gap between icons */
+    justify-content: center; /* Center the icons */
+    align-items: center;
+}
+
+    .socials a {
+        color: #ffffff; /* White color for better visibility on dark background */
+        font-size: 32px; /* Made icons bigger */
+        text-decoration: none;
+    }
+
+        .socials a:active { /* Only applies style when clicking */
+            color: #00ffff; /* Bright cyan color for click effect */
+            transform: scale(0.95); /* Slight scale down effect when clicking */
+        }
+
+        /* Optional hover effect - remove if not wanted */
+        .socials a:hover {
+            opacity: 0.8;
+        }
+
+.last {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact button:hover {
+    background-color: blue;
+}
+
+.navs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0.5rem; /* Halved padding */
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+/* Class added when nav should be hidden */
+.nav-hidden {
+    transform: translateY(-100%);
+}
+.brand-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.brand-logo {
+    height: 50px; /* Adjust this value based on your desired logo size */
+    width: auto; /* This maintains the image's aspect ratio */
+    vertical-align: middle;
+}
+
+/* Optional hover effect */
+.brand-link:hover .brand-logo {
+    opacity: 0.9;
+}
+.brand {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+    .navbar a {
+        color: #333;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+        .navbar a:hover {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        .navbar a.active {
+            background-color: #0066cc;
+            color: white;
+        }
+
+.become-member {
+    margin-left: 1rem;
+}
+
+    .become-member a {
+        background-color: #0066cc;
+    }
+
+    .become-member button {
+        background-color: #0066cc;
+        color: blue;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .become-member button:hover {
+            background-color: #0052a3;
+            transform: translateY(-2px);
+        }
+
+/* Add padding to body to prevent content from hiding behind fixed navbar */
+body {
+    padding-top: 80px;
+}
+
+.brand {
+    justify-content: flex-start;
+    margin-right: 75px;
+}
+
+.brand h4 {
+    color: black;
+    text-align: center;
+}
+.btn {
+    margin: 20px 0;
+}
+
+    .btn .button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #0066cc;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid #0066cc;
+    }
+
+        .btn .button:hover {
+            background-color: lightcyan;
+            color: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+
+.navbar1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+    .navbar1 a {
+        color: #333;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+        .navbar1 a:hover {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        .navbar1 a.active {
+            background-color: #0066cc;
+            color: white;
+        }
+
+
+
+
+
+
+/* styles.css */
+
+/* About Us Section */
+/* styles.css */
+
+/* About Us Section */
+.about-us {
+    background-color: #F0F8FF; /* Light Blue Background */
+    padding: 50px 0;
+    text-align: center;
+}
+
+    .about-us h1 {
+        color: #007BFF; /* Dark Blue Heading */
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .about-us p {
+        color: #333; /* Dark Gray Text */
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .about-us h3 {
+        color: #007BFF; /* Dark Blue Heading */
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .about-us ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .about-us ul li {
+            color: #333; /* Dark Gray Text */
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+
+.importance {
+    text-align: center;
+}
+
+.importance-title {
+    /* Add any desired styles for the title, e.g., font size, color, etc. */
+    font-size: 24px;
+    font-weight: bold;
+}
