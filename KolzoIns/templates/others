@@ -1,0 +1,6 @@
+    <script>
+        // Function to reload the page after 10 minutes (600,000 milliseconds)
+        setTimeout(function () {
+            location.reload();
+        }, 30000);
+    </script>
