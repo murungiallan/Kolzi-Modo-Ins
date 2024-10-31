@@ -124,3 +124,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show navbar when mouse moves to top
     document.addEventListener('mousemove', handleMouseMove);
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    emailjs.init('KcL0gOD3nsp9DtqMo'); // Replace with your User ID
+
+    var appointmentForm = document.getElementById('appointment-form');
+    console.log(appointmentForm); // Debugging statement
+    if (appointmentForm && appointmentForm.tagName === 'FORM') {
+        appointmentForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Send email using EmailJS with the form element
+            emailjs.sendForm('service_27rl3pt', 'template_6kiu6mm', appointmentForm)
+                .then(function (response) {
+                    console.log('Success!', response.status, response.text);
+                    // Optionally, show a success message to the user
+                    alert('Your appointment has been booked successfully!');
+                }, function (error) {
+                    console.error('Failed!', error);
+                    // Optionally, show an error message to the user
+                    alert('Oops! Something went wrong. Please try again later.');
+                });
+
+            // Clear the form fields after submission
+            appointmentForm.reset();
+        });
+    } else {
+        console.error('Element with ID "appointment-form" not found or is not a form element.');
+    }
+});

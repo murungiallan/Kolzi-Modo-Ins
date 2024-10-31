@@ -14,6 +14,7 @@
     background-position: center;
     background-size: cover;
     height: 110vh;
+    top: -100px; /* Add this */
 }
 
 .container {
@@ -22,6 +23,7 @@
     align-items: center;
     background-position: center;
     background-size: cover;
+    top: -60px;
 }
 
 .brand {
@@ -119,14 +121,13 @@
     width: 150px;
     height: 50px;
 }
-
 .brand2 {
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 50px;
     max-width: 1200px;
-    margin: 50px auto 0;
+    margin: 20px auto 0;
 }
 
 .feature-card {
@@ -135,19 +136,20 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 30px; /* Increased padding */
     min-width: 0;
     width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border-radius: 8px;
+    height: 200px; /* Increased height to fit content */
+    background-color: transparent; /* Start with transparent background */
 }
 
-    /* Hover effect */
     .feature-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        background-color: rgba(255, 255, 255, 0.1); /* Optional: adds subtle background change */
+        background-color: rgba(255, 255, 255, 0.1);
     }
 
 .icon-wrapper {
@@ -157,36 +159,34 @@
     .icon-wrapper ion-icon {
         font-size: 32px;
         color: #333;
-        transition: transform 0.3s ease; /* Add transition for icon */
+        transition: transform 0.3s ease;
     }
 
-/* Icon hover effect */
 .feature-card:hover .icon-wrapper ion-icon {
     transform: scale(1.2);
-    color: #007bff; /* Change icon color on hover - adjust color as needed */
+    color: #007bff;
 }
 
 .feature-card h3 {
     margin: 0 0 15px 0;
     font-size: 1.2rem;
     color: #333;
-    height: 24px;
+    min-height: 24px; /* Changed to min-height */
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color 0.3s ease; /* Add transition for text */
+    transition: color 0.3s ease;
 }
 
-/* Title hover effect */
 .feature-card:hover h3 {
-    color: #007bff; /* Change title color on hover - adjust color as needed */
+    color: #007bff;
 }
 
 .feature-card p {
     margin: 0;
     line-height: 1.5;
     color: #666;
-    height: 80px;
+    min-height: 80px; /* Changed to min-height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,10 +201,11 @@
 
     .feature-card {
         width: 100%;
+        height: auto; /* Allow height to adjust on mobile */
+        min-height: 300px; /* Minimum height on mobile */
     }
 
         .feature-card p {
-            height: auto;
             min-height: 80px;
         }
 }
@@ -445,7 +446,7 @@ body {
 .standard,
 .premium {
     width: 300px;
-    min-height: 400px;
+    min-height: 200px;
     padding: 2rem;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -458,7 +459,7 @@ body {
     .free:hover,
     .standard:hover,
     .premium:hover {
-        transform: scale(1.15);
+        transform: scale(1.13);
         background-color: #0078D4;
         color: white;
     }
@@ -623,6 +624,7 @@ button {
 .about-ceo {
     flex: 2;
     padding: 20px;
+    position: relative;
 }
 
     .about-ceo h3 {
@@ -810,16 +812,31 @@ form {
     margin-top: 100px;
 }
 
-.reserved {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 300px;
-}
+
 
 .socials {
-    color: blue;
+    margin-top: 20px;
+    display: flex;
+    gap: 30px; /* Increased gap between icons */
+    justify-content: center; /* Center the icons */
+    align-items: center;
 }
+
+    .socials a {
+        color: #ffffff; /* White color for better visibility on dark background */
+        font-size: 32px; /* Made icons bigger */
+        text-decoration: none;
+    }
+
+        .socials a:active { /* Only applies style when clicking */
+            color: #00ffff; /* Bright cyan color for click effect */
+            transform: scale(0.95); /* Slight scale down effect when clicking */
+        }
+
+        /* Optional hover effect - remove if not wanted */
+        .socials a:hover {
+            opacity: 0.8;
+        }
 
 .last {
     display: flex;
@@ -837,6 +854,7 @@ form {
     position: fixed;
     top: 0;
     left: 0;
+    height: 70px;
     right: 0;
     display: flex;
     justify-content: space-between;
@@ -851,7 +869,21 @@ form {
 .nav-hidden {
     transform: translateY(-100%);
 }
+.brand-link {
+    text-decoration: none;
+    display: inline-block;
+}
 
+.brand-logo {
+    height: 50px; /* Adjust this value based on your desired logo size */
+    width: auto; /* This maintains the image's aspect ratio */
+    vertical-align: middle;
+}
+
+/* Optional hover effect */
+.brand-link:hover .brand-logo {
+    opacity: 0.9;
+}
 .brand {
     font-size: 1.2rem;
     margin: 0;
@@ -913,10 +945,121 @@ body {
 
 .brand {
     justify-content: flex-start;
-    margin-right: 40px;
+    margin-right: 75px;
 }
 
 .brand h4 {
     color: black;
     text-align: center;
+}
+.btn {
+    margin: 20px 0;
+}
+
+    .btn .button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #0066cc;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid #0066cc;
+    }
+
+        .btn .button:hover {
+            background-color: lightcyan;
+            color: #0066cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+
+.navbar1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+    .navbar1 a {
+        color: #333;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+        .navbar1 a:hover {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        .navbar1 a.active {
+            background-color: #0066cc;
+            color: white;
+        }
+
+
+
+
+
+
+/* styles.css */
+
+/* About Us Section */
+/* styles.css */
+
+/* About Us Section */
+.about-us {
+    background-color: #F0F8FF; /* Light Blue Background */
+    padding: 50px 0;
+    text-align: center;
+}
+
+    .about-us h1 {
+        color: #007BFF; /* Dark Blue Heading */
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .about-us p {
+        color: #333; /* Dark Gray Text */
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .about-us h3 {
+        color: #007BFF; /* Dark Blue Heading */
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .about-us ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .about-us ul li {
+            color: #333; /* Dark Gray Text */
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+
+.importance {
+    text-align: center;
+}
+
+.importance-title {
+    /* Add any desired styles for the title, e.g., font size, color, etc. */
+    font-size: 24px;
+    font-weight: bold;
 }

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>KolzoModo Insuarance</title>
+    <link rel="icon" href="{% static 'images/kl-icon.jpg' %}" type="image/png">
     <script>
         // Function to reload the page after 10 minutes (600,000 milliseconds)
         setTimeout(function () {
@@ -24,14 +25,18 @@
                 <div class="brand">
                     <div class="navs">
 
-                        <h4 class="brand">Kolzi Modo Insuarance</h4>
+                        <a href="" class="brand-link">
+                            <img src="{% static 'images/kolzi-logo.jpg' %}" alt="Kolzi Modo Insurance" class="brand-logo">
+                        </a>
 
                         <div class="navbar">
                             <a href="#home">Home</a>
-                            <a href="#about">About</a>
+
+
                             <a href="#product">Product</a>
                             <a href="#contact">Contact</a>
-                            <a href="#login">Login</a>
+                            <a href="#" onclick="window.location.href='{% url 'about' %}'; return false;">About Us</a>
+                            <a href="#login"></a>
                             <div class="become-member">
                                 <a href="#book" class="button">Join</a>
                             </div>
@@ -45,46 +50,52 @@
                                 <p>Insurer with us for best services .</p>
                                 <div class="buttons">
                                     <div class="button">
-                                        <button>Get Quote Now</button>
+                                        <button onclick="window.location.href='#book'">Get Quote Now</button>
                                     </div>
                                     <div class="button2">
-                                        <button>Learn More</button>
+                                        <button onclick="window.location.href='{% url 'about' %}';">Learn More</button>
                                     </div>
                                 </div>
                             </div>
 
-                        </div>
-                    </section>
-                    <br><br>
-                    <section id="about">
-                        <div class="brand2">
-                            <div class="feature-card">
-                                <div class="icon-wrapper">
-                                    <ion-icon name="shield-outline"></ion-icon>
-                                </div>
-                                <h3>Peace of Mind</h3><br><br>
-                                <p>With Insurance we take the risk of it and transfer as payable premiums</p>
-                            </div>
-
-                            <div class="feature-card">
-                                <div class="icon-wrapper">
-                                    <ion-icon name="leaf-outline"></ion-icon>
-                                </div>
-                                <h3>Set For Life</h3>
-                                <br><br><br>
-                                <p>Insurance, life insurance enables one to set your goals and actually achievable when certain goals are in place</p>
-                            </div>
-
-                            <div class="feature-card">
-                                <div class="icon-wrapper">
-                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                                </div>
-                                <h3>100% Satisfaction</h3><br><br>
-                                <p>Claims and Repayments (credibility) has become automatic to all insurance, thus satisfactory services</p>
-                            </div>
                         </div>
                     </section>
                 </div>
+                <br><br><br><br><br><br><br><br><br><br>
+                <section id="about">
+                    <div class="importance">
+                        <h2 class="importance-title">Importance of Insurance</h2>
+                    </div>
+
+                    <div class="brand2">
+
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <ion-icon name="shield-outline"></ion-icon>
+                            </div>
+                            <h3>Peace of Mind</h3><br>
+                            <p1>12 With Insurance we take the risk of it and transfer as payable premiums</p1>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <ion-icon name="leaf-outline"></ion-icon>
+                            </div>
+                            <h3>Set For Life</h3>
+                            <br>
+                            <p1>Insurance, life insurance enables one to set your goals and actually achievable when certain goals are in place</p1>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <ion-icon name="checkmark-circle-outline"></ion-icon>
+                            </div>
+                            <h3>100% Satisfaction</h3><br>
+                            <p1>Claims & Repayments (credibility) has become automatic to all insurance, thus satisfactory services</p1>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </div>
         <br>
@@ -134,12 +145,11 @@
 
         <div class="industry">
             <div class="conflict">
-                <h3>Industry</h3>
+                <h3>Testimonies</h3>
                 <p>
-                    Problems trying to resolve the conflict between<br> the two major realms of Classical physics:
-                    Newtonian mechanics
+
                 </p>
-            </div><br><br>
+            </div>
             <div class="users-container">
                 <div class="users">
                     <div class="user1">
@@ -273,7 +283,7 @@
                         </div>
                     </div>
                     <div class="btn">
-                        <button>Inquire</button>
+                        <a href="#book" class="button">Inquire</a>
                     </div>
                 </div>
 
@@ -298,7 +308,7 @@
                         </div>
                     </div>
                     <div class="btn">
-                        <button>Inquire</button>
+                        <a href="#book" class="button">Inquire</a>
                     </div>
                 </div>
 
@@ -326,122 +336,116 @@
                             <span>Contract liability (CAR) etc</span>
                         </div>
                     </div>
+
                     <div class="btn">
-                        <button>Inquire</button>
+                        <a href="#book" class="button">Inquire</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <br><br><br>
-                <div class="world">
-                    <div class="ping">
-                        <div class="pic">
-                            <img src="{% static 'images/Aaron.jpg' %}">
-                        </div>
-                        <div class="about-ceo">
-                            <h3>Aaron Munyua, CEO Of Kolzi Modo Insurance</h3>
-                            <p>
-                                He is well versed in the insurance industry.
-                                He did a course in insurance under BCOM at the University of Egerton.
-                                He had an internship course at APA Insurance, Thika for a year.
-                                Worked under Vantage performance Limited as an underwriting assistant,
-                                worked for finance, for 6 months as a claim assistant.
-                                He did his ECOP examination, and Certified IRA licence
-                                for year 2024 and 2025.
-                                IRA 2024 No: IRA/05/47528/2024
-                            </p>
-                        </div>
-                    </div>
-
-                    <section id="book">
-                        <div class="appointment">
-                            <form action="/submit_form" method="post">
-                                <div class="details">
-                                    <label for="full_name">Name*</label>
-                                    <input type="text" id="full_name" name="full_name" required placeholder="Enter your full name">
-
-                                    <label for="email">Email address*</label>
-                                    <input type="email" id="email" name="email" required placeholder="example@gmail.com">
-
-                                    <label for="department">Insurance type*</label>
-                                    <select id="department" name="department" required>
-                                        <option value="">Please Select</option>
-                                        <option value="Basic">Basic Package</option>
-                                        <option value="Life">Life Insurance</option>
-                                        <option value="Car">Car Insurance</option>
-                                    </select>
-
-                                    <label for="appointment_time">Time*</label>
-                                    <select id="appointment_time" name="appointment_time" required>
-                                        <option value="">Please Select</option>
-                                        <option value="09:00 AM">09:00 AM</option>
-                                        <option value="10:00 AM">10:00 AM</option>
-                                        <option value="11:00 AM">11:00 AM</option>
-                                    </select>
-                                </div>
-                                <div class="btnn">
-                                    <button type="submit">Book Appointment</button>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
-
-                </div><br><br><br><br>
-
-        <div class="Agency">
-            <div class="consulting">
-                <div class="consul">
-                    <h3>Consulting Agency For Your Business</h3><br>
-                    <p>the quick jumps for the lazy dog</p>
+        <div class="world">
+            <div class="ping">
+                <div class="pic">
+                    <img src="{% static 'images/Aaron.jpg' %}">
                 </div>
-                <div class="contact">
-                    <button>Contact Us</button>
-                </div><br><br>
+                <div class="about-ceo">
+                    <h3>Aaron Munyua, CEO Of Kolzi Modo Insurance</h3>
+                    <p>
+                        He is well versed in the insurance industry.
+                        He did a course in insurance under BCOM at the University of Egerton.
+                        He had an internship course at APA Insurance, Thika for a year.
+                        Worked under Vantage performance Limited as an underwriting assistant,
+                        worked for finance, for 6 months as a claim assistant.
+                        He did his ECOP examination, and Certified IRA licence
+                        for year 2024 and 2025.
+                        IRA 2024 No: IRA/05/47528/2024
+                    </p>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/me/" target="_blank">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/aaron-baron-21b27b1aa/" target="_blank">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div><br><br><br>
-                      <div class="information">
-                          <div class="Company info">
-                              <h4>Company info</h4><br>
-                              <p>About Us</p><br>
-                              <p>carrier</p><br>
-                              <p>we are hiring</p><br>
-                              <p>blog</p><br>
-                          </div>
-                          <div class="legal">
-                              <h4>Legal</h4><br>
-                              <p>About Us</p><br>
-                              <p>carrier</p><br>
-                              <p>we are hiring</p><br>
-                              <p>blog</p><br>
-                          </div>
-                          <div class="features">
-                              <h4>Features</h4><br>
-                              <p>Business Marketing</p><br>
-                              <p>User Analytic</p><br>
-                              <p>Live Chat</p><br>
-                              <p>Unlimited Support</p><br>
-                          </div>
-                          <div class=" resources">
-                              <h4>Resources</h4><br>
-                              <h3>IOS & Android</h3><br>
-                              <p>Watch a Demo</p><br>
-                              <p>Customers</p><br>
-                              <p>API</p><br>
-                          </div>
 
-                          <div>
-                              <div>
-                              </div><br><br>
+            <section id="book">
+                <div class="appointment">
+                    <form id="appointment-form">
+                        <div class="details">
+                            <label for="full_name">Name*</label>
+                            <input type="text" id="full_name" name="full_name" required placeholder="Enter your full name">
 
-                          </div>
-                      </div>
+                            <label for="email">Email address*</label>
+                            <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+
+                            <label for="department">Insurance type*</label>
+                            <select id="department" name="department" required>
+                                <option value="">Please Select</option>
+                                <option value="Basic">Basic Package</option>
+                                <option value="Life">Life Insurance</option>
+                                <option value="Car">Car Insurance</option>
+                            </select>
+
+                            <label for="appointment_time">Time*</label>
+                            <select id="appointment_time" name="appointment_time" required>
+                                <option value="">Please Select</option>
+                                <option value="09:00 AM">09:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                            </select>
+                        </div>
+                        <div class="btnn">
+                            <button type="submit">Book Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </div><br>
+
+        <br><br>
+        <section id="contact"></section>
+        <div class="information">
+            <div class="Company info">
+                <h4>Company info</h4><br>
+                <p>About Us</p><br>
+
+                <p>blog</p><br>
+            </div>
+            <div class="legal">
+                <h4>Legal</h4><br>
+                <p>About Us</p><br>
+                <p>blog</p><br>
+            </div>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+            <div class="legal">
+                <h4>Contact Us</h4><br>
+                <p><i class="fas fa-envelope"></i> aaronbaron01@gmail.com</p><br>
+                <p><i class="fas fa-phone"></i> +254799807335</p><br>
+                <p><i class="fas fa-globe"></i> www.KolziModoinsuranc.com</p><br>
+            </div>
+
+
+            <div>
+                <div>
+                </div><br><br>
+
+            </div>
         </div>
+    </div>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-        <script src="{% static 'js/site.js' %}"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'js/site.js' %}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 
