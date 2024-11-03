@@ -648,6 +648,43 @@ button {
     background-color:deepskyblue
 }
 
+.custom-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    min-height: 120px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+    .custom-select option {
+        padding: 8px;
+        margin: 2px 0;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        .custom-select option:checked {
+            background: linear-gradient(#007bff, #007bff);
+            color: white;
+        }
+
+        .custom-select option:hover:not(:checked) {
+            background-color: #f0f0f0;
+        }
+
+/* Helper text */
+.select-helper {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    display: block;
+}
+
+
 form {
     width: 90%;
 }
