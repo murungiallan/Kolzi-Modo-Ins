@@ -172,7 +172,7 @@ document.getElementById('appointment-form').addEventListener('submit', function 
                 }
 
                 return emailjs.send(
-                    'Yservice_jgsjklx', // Your service ID
+                    'service_jgsjklx', // Your service ID
                     'template_3dqg3sb', // Your template ID
                     formData,
                     'XXprJ8KXlL67wTa8f' // Your public key (optional if initialized globally)
