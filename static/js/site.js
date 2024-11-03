@@ -126,31 +126,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    emailjs.init('KcL0gOD3nsp9DtqMo'); // Replace with your User ID
 
-    var appointmentForm = document.getElementById('appointment-form');
-    console.log(appointmentForm); // Debugging statement
-    if (appointmentForm && appointmentForm.tagName === 'FORM') {
-        appointmentForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the form from submitting normally
 
-            // Send email using EmailJS with the form element
-            emailjs.sendForm('service_27rl3pt', 'template_6kiu6mm', appointmentForm)
-                .then(function (response) {
-                    console.log('Success!', response.status, response.text);
-                    // Optionally, show a success message to the user
-                    alert('Your appointment has been booked successfully!');
-                }, function (error) {
-                    console.error('Failed!', error);
-                    // Optionally, show an error message to the user
-                    alert('Oops! Something went wrong. Please try again later.');
-                });
+document.getElementById('appointment-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    console.log("Form submission started"); // Debug log
 
-            // Clear the form fields after submission
-            appointmentForm.reset();
-        });
-    } else {
-        console.error('Element with ID "appointment-form" not found or is not a form element.');
-    }
+    // Get form data
+    const formData = {
+        from_name: document.getElementById('full_name').value,
+        to_name: "Admin", // Add if your template uses it
+        full_name: document.getElementById('full_name').value,
+        email: document.getElementById('email').value,
+        insurance: document.getElementById('insurance').value,
+        appointment_time: document.getElementById('appointment_time').value,
+        file_type: Array.from(document.getElementById('file_type').selectedOptions)
+            .map(option => option.value)
+            .join(', ')
+    };
+
+    // Debug logs
+    console.log("Form Data:", formData);
+    console.log("Service ID:", 'service_jgsjklxq'); // Replace with your actual service ID
+    console.log("Template ID:", 'template_3dqg3sb');
+
+    // Send email
+    emailjs.send(
+        'service_jgsjklxq',     // Replace with your actual service ID
+        'template_3dqg3sb',    // Your template ID
+        formData
+    ).then(
+        function (response) {
+            console.log('SUCCESS!', response);
+            alert('Appointment request sent successfully!');
+            document.getElementById('appointment-form').reset();
+        },
+        function (error) {
+            console.error('FAILED...', error);
+            alert(`Failed to send email: ${error.text}`);
+        }
+    );
 });

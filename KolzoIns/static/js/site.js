@@ -130,15 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('appointment-form').addEventListener('submit', function (event) {
     event.preventDefault();
-
-    // Show loading state
-    const submitButton = event.target.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
-    submitButton.disabled = true;
+    console.log("Form submission started"); // Debug log
 
     // Get form data
     const formData = {
+        from_name: document.getElementById('full_name').value,
+        to_name: "Admin", // Add if your template uses it
         full_name: document.getElementById('full_name').value,
         email: document.getElementById('email').value,
         insurance: document.getElementById('insurance').value,
@@ -148,56 +145,25 @@ document.getElementById('appointment-form').addEventListener('submit', function 
             .join(', ')
     };
 
-    // Handle file uploads
-    const fileInput = document.getElementById('file_upload');
-    const files = fileInput.files;
+    // Debug logs
+    console.log("Form Data:", formData);
+    console.log("Service ID:", 'service_jgsjklxq'); // Replace with your actual service ID
+    console.log("Template ID:", 'template_3dqg3sb');
 
-    try {
-        // If there are files, convert them to base64
-        const filesPromises = Array.from(files).map(file => {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => resolve(reader.result);
-                reader.onerror = error => reject(error);
-            });
-        });
-
-        // Send email
-        Promise.all(filesPromises)
-            .then(fileBase64s => {
-                // Add files to formData if any
-                if (fileBase64s.length > 0) {
-                    formData.files = fileBase64s;
-                }
-
-                return emailjs.send(
-                    'service_jgsjklx', // Your service ID
-                    'template_3dqg3sb', // Your template ID
-                    formData,
-                    'XXprJ8KXlL67wTa8f' // Your public key (optional if initialized globally)
-                );
-            })
-            .then(response => {
-                console.log('SUCCESS!', response);
-                alert('Appointment request sent successfully!');
-                document.getElementById('appointment-form').reset();
-            })
-            .catch(error => {
-                console.error('FAILED...', error);
-                alert(`Failed to send: ${error.text || 'Unknown error occurred'}`);
-            })
-            .finally(() => {
-                // Reset button state
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-            });
-
-    } catch (error) {
-        console.error('Error in form submission:', error);
-        alert('An unexpected error occurred. Please try again.');
-        // Reset button state
-        submitButton.textContent = originalButtonText;
-        submitButton.disabled = false;
-    }
+    // Send email
+    emailjs.send(
+        'service_jgsjklxq',     // Replace with your actual service ID
+        'template_3dqg3sb',    // Your template ID
+        formData
+    ).then(
+        function (response) {
+            console.log('SUCCESS!', response);
+            alert('Appointment request sent successfully!');
+            document.getElementById('appointment-form').reset();
+        },
+        function (error) {
+            console.error('FAILED...', error);
+            alert(`Failed to send email: ${error.text}`);
+        }
+    );
 });
