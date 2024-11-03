@@ -11,6 +11,8 @@
     <title>KolziModo Insuarance</title>
     <link rel="icon" href="{% static 'images/kl-icon.jpg' %}" type="image/png">
 
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+
 </head>
 
 <body>
@@ -21,7 +23,7 @@
                     <div class="navs">
 
                         <a href="" class="brand-link">
-                            <img src="{% static 'images/kolzi-logo.jpg' %}" alt="Kolzi Modo Insurance" class="brand-logo">
+                            <img src="{% static 'images/kolzi-logo.png' %}" alt="Kolzi Modo Insurance" class="brand-logo">
                         </a>
 
                         <div class="navbar">
@@ -382,8 +384,8 @@
                             <label for="email">Email address*</label>
                             <input type="email" id="email" name="email" required placeholder="example@gmail.com">
 
-                            <label for="department">Insurance type*</label>
-                            <select id="department" name="department" required>
+                            <label for="insurance">Insurance type*</label>
+                            <select id="insurance" name="insurance" required>
                                 <option value="">Please Select</option>
                                 <option value="Basic">Basic Package</option>
                                 <option value="Life">Life Insurance</option>
@@ -397,6 +399,17 @@
                                 <option value="10:00 AM">10:00 AM</option>
                                 <option value="11:00 AM">11:00 AM</option>
                             </select>
+
+                            <label for="file_type">Select File Type (optional):</label>
+                            <select id="file_type" name="file_type" multiple>
+                                <option value="ID">ID</option>
+                                <option value="KRA">KRA</option>
+                                <option value="Logbook">Logbook</option>
+                            </select>
+
+                            <!-- Single file input field (multi-file upload) -->
+                            <label for="file_upload">Attach Files (optional):</label>
+                            <input type="file" id="file_upload" name="file_upload" multiple>
                         </div>
                         <div class="btnn">
                             <button type="submit">Book Appointment</button>
@@ -435,7 +448,16 @@
         </div>
     </div>
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "XXprJ8KXlL67wTa8f",
+            });
+        })();
+    </script>
 
     <script src="{% static 'js/site.js' %}"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

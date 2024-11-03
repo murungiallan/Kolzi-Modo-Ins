@@ -126,31 +126,58 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    emailjs.init('KcL0gOD3nsp9DtqMo'); // Replace with your User ID
 
-    var appointmentForm = document.getElementById('appointment-form');
-    console.log(appointmentForm); // Debugging statement
-    if (appointmentForm && appointmentForm.tagName === 'FORM') {
-        appointmentForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the form from submitting normally
 
-            // Send email using EmailJS with the form element
-            emailjs.sendForm('service_27rl3pt', 'template_6kiu6mm', appointmentForm)
-                .then(function (response) {
-                    console.log('Success!', response.status, response.text);
-                    // Optionally, show a success message to the user
-                    alert('Your appointment has been booked successfully!');
-                }, function (error) {
-                    console.error('Failed!', error);
-                    // Optionally, show an error message to the user
-                    alert('Oops! Something went wrong. Please try again later.');
-                });
+document.getElementById('appointment-form').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-            // Clear the form fields after submission
-            appointmentForm.reset();
+    // Get form data
+    const formData = {
+        full_name: document.getElementById('full_name').value,
+        email: document.getElementById('email').value,
+        insurance: document.getElementById('insurance').value,
+        appointment_time: document.getElementById('appointment_time').value,
+        file_type: Array.from(document.getElementById('file_type').selectedOptions).map(option => option.value).join(', ')
+    };
+
+    // Handle file uploads
+    const fileInput = document.getElementById('file_upload');
+    const files = fileInput.files;
+
+    // If there are files, convert them to base64
+    const filesPromises = Array.from(files).map(file => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
         });
-    } else {
-        console.error('Element with ID "appointment-form" not found or is not a form element.');
-    }
+    });
+
+    // Send email
+    Promise.all(filesPromises).then(fileBase64s => {
+        // Add files to formData if any
+        if (fileBase64s.length > 0) {
+            formData.files = fileBase64s;
+        }
+
+        emailjs.send(
+            'Yservice_jgsjklx', // Email service ID from EmailJS
+            'template_3dqg3sb', // Email template ID from EmailJS
+            formData
+        ).then(
+            function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Appointment request sent successfully!');
+                document.getElementById('appointment-form').reset();
+            },
+            function (error) {
+                console.log('FAILED...', error);
+                alert('Failed to send appointment request. Please try again.');
+            }
+        );
+    }).catch(error => {
+        console.error('Error processing files:', error);
+        alert('Error processing files. Please try again.');
+    });
 });
