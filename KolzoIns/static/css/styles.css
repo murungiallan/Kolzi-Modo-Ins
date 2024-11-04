@@ -1395,7 +1395,7 @@ footer {
         gap: 30px;
         margin-top: 20px;
         overflow-x: hidden;
-        width:95%;
+        width:90%;
     }
 
     .users-container {
@@ -1673,7 +1673,7 @@ footer {
     }
     .navs {
         position: absolute;
-        width: 100%;
+        width: 95%;
         padding: 5px 5px; /* Reduced padding */
         background: white;
         margin-top: 1px; /* Remove any top margin */
