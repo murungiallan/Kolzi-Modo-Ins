@@ -21,6 +21,7 @@
                         </a>
                         <div class="navbar1">
                             <a href="{% url 'home' %}">Home</a>
+                            <a href="#contact">contact</a>
 
 
 
@@ -29,27 +30,48 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- About Us Section -->
+        <section id="about" class="about-us">
+            <div class="container">
+                <h1>About Us</h1>
+                <p>At Kolzo Modo Insurance, we pride ourselves on offering comprehensive and customizable insurance solutions tailored to meet the diverse needs of our clients. Our product range includes auto, home, health, and life insurance, ensuring comprehensive coverage for all aspects of your life.</p>
+                <p>We also provide specialized services such as business insurance and liability protection, catering to both individual and corporate clients. Our dedicated team of professionals is committed to delivering personalized service, guiding clients through the complexities of insurance options, and ensuring peace of mind with reliable and secure coverage.</p>
+                <p>With Kolzo Modo Insurance, clients experience the confidence of being safeguarded by a trusted partner focused on their unique needs and future aspirations.</p>
+                <h3>Our Mission</h3>
+                <p>
+                    To provide dependable insurance services that secure the future of our clients through innovative solutions and dedicated support.
+                </p>
+                <h3>Our Values</h3>
+                <ul>
+                    <li><strong>Integrity:</strong> Upholding honesty and ethical standards in all our dealings.</li>
+                    <li><strong>Customer Satisfaction:</strong> Ensuring our clients receive unmatched support and service.</li>
+                    <li><strong>Innovation:</strong> Continuously improving our products to meet changing needs.</li>
+                </ul>
+            </div>
+        </section>
+        <footer id="contact">
+            <div class="information">
+                <!-- Company Info Section -->
+                <div class="company-info">
+                    <h4>Company Info</h4>
+                    <p><a href="#" onclick="window.location.href='{% url 'about' %}'; return false;">About Us</a></p>
+                    <p><a href="#">Blog</a></p>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="legal">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:aaronbaron01@gmail.com">aaronbaron01@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+254799807335">+254799807335</a></p>
+                    <p><i class="fas fa-globe"></i> <a href="http://www.KolziModoinsuranc.com" target="_blank">www.KolziModoinsuranc.com</a></p>
+                </div>
+            </div>
+        </footer>
+
+
     </div>
-
-    <!-- About Us Section -->
-    <section id="about" class="about-us">
-        <div class="container">
-            <h1>About Us</h1>
-            <p>At Kolzo Modo Insurance, we pride ourselves on offering comprehensive and customizable insurance solutions tailored to meet the diverse needs of our clients. Our product range includes auto, home, health, and life insurance, ensuring comprehensive coverage for all aspects of your life.</p>
-            <p>We also provide specialized services such as business insurance and liability protection, catering to both individual and corporate clients. Our dedicated team of professionals is committed to delivering personalized service, guiding clients through the complexities of insurance options, and ensuring peace of mind with reliable and secure coverage.</p>
-            <p>With Kolzo Modo Insurance, clients experience the confidence of being safeguarded by a trusted partner focused on their unique needs and future aspirations.</p>
-            <h3>Our Mission</h3>
-            <p>
-                To provide dependable insurance services that secure the future of our clients through innovative solutions and dedicated support.
-            </p>
-            <h3>Our Values</h3>
-            <ul>
-                <li><strong>Integrity:</strong> Upholding honesty and ethical standards in all our dealings.</li>
-                <li><strong>Customer Satisfaction:</strong> Ensuring our clients receive unmatched support and service.</li>
-                <li><strong>Innovation:</strong> Continuously improving our products to meet changing needs.</li>
-            </ul>
-        </div>
-    </section>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </body>
 </html>

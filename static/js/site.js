@@ -1,8 +1,20 @@
 // site.js
 let currentPosition = 0;
 const testimonials = document.querySelectorAll('.user1, .user2, .user3');
-const testimonialWidth = 330; // 300px width + 30px gap
-const visibleCount = 2;
+
+// Function to set widths and visible count based on screen size
+function updateDisplaySettings() {
+    // Check the window size and update width and visible count
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        testimonialWidth = window.innerWidth; // Full width on mobile
+        visibleCount = 1; // Show only one testimonial on mobile
+    } else {
+        testimonialWidth = 330; // Default width for desktop
+        visibleCount = 2; // Show two testimonials on desktop
+    }
+}
+
+updateDisplaySettings(); // Set initial widths and counts
 
 function moveTestimonials() {
     const usersContainer = document.querySelector('.users');
@@ -16,17 +28,19 @@ function moveTestimonials() {
     usersContainer.style.transform = `translateX(${offset}px)`;
 }
 
-// Clone the first two testimonials and append them to the end
+// Clone the first 'visibleCount' testimonials and append them to the end
 const users = document.querySelector('.users');
-const firstTwo = Array.from(testimonials).slice(0, 2);
-firstTwo.forEach(testimonial => {
+const firstVisible = Array.from(testimonials).slice(0, visibleCount);
+firstVisible.forEach(testimonial => {
     const clone = testimonial.cloneNode(true);
     users.appendChild(clone);
 });
 
 // Start the animation
-setInterval(moveTestimonials, 6000); // Move every minute
+setInterval(moveTestimonials, 6000); // Move every 6 seconds
 
+// Update widths and visible count on window resize
+window.addEventListener('resize', updateDisplaySettings);
 
 
 let lastScrollTop = 0;
@@ -167,3 +181,9 @@ document.getElementById('appointment-form').addEventListener('submit', function 
         }
     );
 });
+
+
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('active');
+}
