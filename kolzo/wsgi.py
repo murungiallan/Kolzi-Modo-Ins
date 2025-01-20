@@ -28,5 +28,4 @@ os.environ.setdefault(
 # setting points here.
 application = get_wsgi_application()
 
-
 app = application
